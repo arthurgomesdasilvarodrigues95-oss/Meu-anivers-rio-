@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🎉 ANIVERSÁRIO DE ARTHURGG 🎉</title>
+  <style>
+    /* Fonte básica */
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+    :root {
+      --card-bg: rgba(0,0,0,0.65);
+      --accent: #ff4b4b;
+      --accent-2: #00c853;
+      --yellow: #ffd54f;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: 'Fredoka One', cursive;
+      background-color:#111; /* fallback */
+      /* Fundo de pizza (rola junto com a página) */
+      background-image: url('https://i.imgur.com/qM8SuHk.jpg');
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll; /* ROLA com a página */
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* centrar conteúdo */
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+      box-sizing:border-box;
+    }
+
+    .card{
+      width:100%;
+      max-width:760px;
+      background: var(--card-bg);
+      border-radius:18px;
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      text-align:center;
+      backdrop-filter: blur(2px);
+    }
+
+    h1{
+      font-size:2.2rem;
+      margin:0 0 8px 0;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:#fff;
+      text-shadow: 0 3px 14px rgba(0,0,0,0.7);
+    }
+
+    p.lead{
+      margin:8px 0 18px 0;
+      font-size:1rem;
+      line-height:1.4;
+      color:#fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    h2.date{
+      margin: 10px 0 18px 0;
+      color: var(--yellow);
+      font-size:1.05rem;
+    }
+
+    .controls{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border: none;
+      padding:12px 18px;
+      border-radius:10px;
+      font-size:1rem;
+      cursor:pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .btn:active{ transform: translateY(1px); }
+
+    .map-btn{
+      background: linear-gradient(180deg,var(--accent), #ff6b6b);
+      color:#fff;
+    }
+
+    .confirm-btn{
+      background: linear-gradient(180deg,var(--accent-2), #00e676);
+      color:#073b07;
+      font-weight:700;
+    }
+
+    input#nomeInput{
+      padding:10px 12px;
+      border-radius:8px;
+      border: none;
+      width:70%;
+      max-width:320px;
+      font-size:1rem;
+      text-align:center;
+      outline: none;
+    }
+
+    #contador{
+      margin-top:18px;
+      font-weight:700;
+      font-size:1.05rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .lista-wrap{
+      margin-top:18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    ul#listaConfirmados{
+      margin:10px 0 0 0;
+      padding:0;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:center;
+      list-style:none;
+    }
+
+    ul#listaConfirmados li{
+      background: rgba(255,255,255,0.08);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      color:#fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    footer{
+      margin-top:22px;
+      font-size:0.9rem;
+      opacity:0.9;
+      color:#fff;
+    }
+
+    /* responsivo */
+    @media (max-width:480px){
+      .card{ padding:18px; border-radius:14px; }
+      h1{ font-size:1.6rem; }
+      input#nomeInput{ width:86%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>🎉 ANIVERSÁRIO DE ARTHURGG 🎉</h1>
+      <p class="lead">🍕 EAE PARÇAS! Tá chegando o rolê de pizza mais insano — prepara a fome e a zoeira! 😎</p>
+
+      <h2 class="date">📅 DATA DO ROLÊ: 09 de Novembro de 2025 - 20h</h2>
+
+      <div class="controls">
+        <a class="btn map-btn" href="https://www.google.com/maps" target="_blank" rel="noreferrer">📍 VER NO MAPA</a>
+      </div>
+
+      <div style="margin-top:16px;">
+        <input id="nomeInput" type="text" placeholder="Digite seu nome pra confirmar 🍕" />
+        <button id="confirmarBtn" class="btn confirm-btn">Tô dentro 🍕🔥</button>
+      </div>
+
+      <div class="lista-wrap">
+        <h3 style="margin:12px 0 6px 0">✅ Confirmados pro rolê:</h3>
+        <ul id="listaConfirmados"><li>Carregando...</li></ul>
+      </div>
+
+      <div id="contador">⏳ Calculando tempo pro rolê...</div>
+
+      <footer>Feito com ❤️ — ADM SUPREMO ARTHURGG</footer>
+    </div>
+  </div>
+
+  <!-- Firebase + script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getDatabase, ref, push, onValue, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+    // === TEU FIREBASE CONFIG (colei o que tu mandou) ===
+    const firebaseConfig = {
+      apiKey: "AIzaSyD9QlE0MHBVEr9BEyu8ML4yzbQI8f-M4Z8",
+      authDomain: "aniversario-arthurgg.firebaseapp.com",
+      projectId: "aniversario-arthurgg",
+      storageBucket: "aniversario-arthurgg.firebasestorage.app",
+      messagingSenderId: "452477659467",
+      appId: "1:452477659467:web:e4a673c1f0d5b7dbd2a0ce",
+      measurementId: "G-SBYWZ6SPST"
+    };
+    // O databaseURL que tu passou:
+    const databaseURL = "https://aniversario-arthurgg-default-rtdb.firebaseio.com/";
+
+    // Inicializa
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app, databaseURL);
+    const confirmRef = ref(db, 'confirmados');
+
+    // Elementos
+    const input = document.getElementById('nomeInput');
+    const btn = document.getElementById('confirmarBtn');
+    const lista = document.getElementById('listaConfirmados');
+
+    // Preenche o input com nome salvo localmente (opcional)
+    const meuNomeLocal = localStorage.getItem('meuNomeArthurGG');
+    if(meuNomeLocal) input.value = meuNomeLocal;
+
+    // Quando clica em "Tô dentro"
+    btn.addEventListener('click', () => {
+      const nome = input.value.trim();
+      if(!nome){
+        alert('Coloca teu nome, meu parça!');
+        return;
+      }
+
+      // Salva no Realtime Database com timestamp
+      push(confirmRef, { nome: nome, criadoEm: serverTimestamp() })
+        .then(() => {
+          // guarda local pra preencher depois
+          localStorage.setItem('meuNomeArthurGG', nome);
+          input.value = '';
+        })
+        .catch(err => {
+          console.error('Erro ao salvar no Firebase:', err);
+          alert('Deu ruim ao confirmar, tenta de novo.');
+        });
+    });
+
+    // Ouve mudanças em tempo real e atualiza lista
+    onValue(confirmRef, (snapshot) => {
+      const data = snapshot.val();
+      lista.innerHTML = '';
+      if(data){
+        // transformar em array ordenado por criadoEm (melhora UX)
+        const arr = Object.values(data).map(item => {
+          // se item for só string (caso push antigo), normaliza
+          if(typeof item === 'string') return { nome: item, criadoEm: 0 };
+          return item;
+        });
+        arr.sort((a,b) => (a.criadoEm||0) - (b.criadoEm||0));
+        arr.forEach(obj => {
+          const li = document.createElement('li');
+          li.textContent = obj.nome;
+          lista.appendChild(li);
+        });
+      } else {
+        const li = document.createElement('li');
+        li.textContent = 'Ninguém confirmou ainda 😅';
+        lista.appendChild(li);
+      }
+    });
+
+    // Contador regressivo para 09/11/2025 20:00 (fuso do navegador)
+    const contadorEl = document.getElementById('contador');
+    const dataRole = new Date('November 9, 2025 20:00:00').getTime();
+
+    function atualizarContador(){
+      const agora = Date.now();
+      const diff = dataRole - agora;
+      if(diff <= 0){
+        contadorEl.textContent = '🔥 O ROLÊ COMEÇOU! VAI PRA PIZZA! 🍕';
+        return;
+      }
+      const dias = Math.floor(diff / (1000*60*60*24));
+      const horas = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const minutos = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const segundos = Math.floor((diff % (1000*60)) / 1000);
+      contadorEl.textContent = `⏳ Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s pro rolê! 🍕`;
+    }
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
+
+  </script>
+</body>
+</html>
